@@ -26,3 +26,18 @@
     serviceEstimate.textContent = `€${service.toFixed(2)}`;
     totalEstimate.textContent = `€${total.toFixed(2)}`;
   });
+
+  const paymentRadios = document.querySelectorAll('input[name="payment"]');
+const depositField = document.getElementById("depositField");
+
+paymentRadios.forEach(radio => {
+  radio.addEventListener("change", () => {
+
+    if (radio.value === "Deposit" && radio.checked) {
+      depositField.classList.add("active");
+    } else if (radio.value === "Cash" && radio.checked) {
+      depositField.classList.remove("active");
+    }
+
+  });
+});

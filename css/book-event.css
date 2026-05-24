@@ -414,3 +414,16 @@ textarea:focus {
   background:#cfa85f;
   transform: translateY(-2px);
 }
+
+.deposit-field {
+  display: none;
+  margin-top: 18px;
+}
+
+.deposit-field.active {
+  display: block;
+}
+
+.deposit-field input {
+  width: 20%;
+}

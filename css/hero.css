@@ -26,6 +26,8 @@
 
   background-size: cover;
   background-position: center right;
+  background-attachment: scroll;
+  will-change: auto;
 }
 
 .hero-content {

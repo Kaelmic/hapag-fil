@@ -1,0 +1,349 @@
+@media (max-width: 1200px) {
+  .process-bar {
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: 100%;
+    margin-top: 70px;
+  }
+
+  .process-item:nth-child(2) {
+    border-right: none;
+  }
+
+  .hero {
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .event-booking-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .estimate-panel {
+    position: static;
+    order: -1;
+  }
+}
+
+@media (max-width: 1100px) {
+  .navbar {
+    width: calc(100% - 32px);
+    height: 72px;
+    padding: 0 20px;
+  }
+
+  .logo {
+    height: 72px;
+  }
+
+  .logo img {
+    height: 96px;
+  }
+
+  .nav-links {
+    gap: 2px;
+  }
+
+  .nav-links a {
+    padding: 10px 12px;
+    font-size: 0.88rem;
+  }
+
+  .nav-book {
+    padding: 14px 18px;
+  }
+
+  .menu-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .order-summary {
+    position: static;
+  }
+
+  .menu-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .menu-page-card img {
+    height: 460px;
+  }
+
+  .preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+  }
+
+}
+
+@media (max-width: 950px) {
+  .event-hero,
+  .event-form-section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .form-grid,
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dessert-card {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+  }
+
+  .dessert-card h4 {
+    grid-column: span 1;
+  }
+
+  .submit-panel {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .submit-panel button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 24px 20px 30px;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(5, 5, 4, 0.88) 0%,
+        rgba(5, 5, 4, 0.7) 45%,
+        rgba(5, 5, 4, 0.95) 100%
+      ),
+      url("../images/hapag-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+  }
+
+  .navbar {
+    align-items: center;
+  }
+
+  .nav-links,
+  .nav-book {
+    display: none;
+  }
+
+  .hero-content {
+    margin-top: 85px;
+  }
+
+  .hero-kicker {
+    letter-spacing: 4px;
+    font-size: 0.72rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(4rem, 17vw, 6rem);
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons,
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .page-container {
+  width: calc(100% - 40px);
+  }
+
+  .btn,
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .process-bar {
+    grid-template-columns: 1fr;
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  .process-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(213, 172, 76, 0.28);
+    padding: 0 0 22px;
+  }
+
+  .process-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .services-section,
+  .preview-section,
+  .menu-preview,
+  .about-preview,
+  .home-cta,
+  .menu-builder,
+  .about-section {
+    padding: 80px 20px;
+  }
+
+  .package-grid,
+  .preview-grid,
+  .menu-preview-grid,
+  .food-grid,
+  .about-story,
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .package-card.featured {
+    transform: none;
+  }
+
+  .about-image {
+    min-height: 360px;
+  }
+
+  .about-content {
+    padding: 28px;
+  }
+
+  .footer {
+    flex-direction: column;
+    padding: 30px 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 820px) {
+  .navbar {
+    top: 14px;
+    width: calc(100% - 20px);
+    height: 66px;
+    padding: 0 18px;
+    border-radius: 20px;
+  }
+
+  .logo {
+    height: 66px;
+  }
+
+  .logo img {
+    height: 82px;
+  }
+}
+
+@media (max-width: 760px) {
+  .category-title {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .food-card {
+    min-height: auto;
+  }
+
+  .preview-section,
+  .menu-preview,
+  .about-preview,
+  .home-cta {
+    padding: 80px 20px;
+  }
+
+  .preview-grid,
+  .menu-preview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    margin-bottom: 34px;
+  }
+
+  .menu-preview-grid {
+    margin-top: 38px;
+  }
+
+  .menu-page-card img {
+    height: 380px;
+  }
+
+  .footer {
+    padding: 70px 0 28px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .process-item {
+    align-items: flex-start;
+  }
+
+  .process-icon {
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    font-size: 1.4rem;
+  }
+
+  .logo img {
+    height: 72px;
+  }
+}
+
+@media (max-width: 650px) {
+  .menu-preview {
+    padding: 80px 22px;
+  }
+
+  .menu-preview-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .menu-page-card img {
+    height: 480px;
+  }
+}
+
+@media (max-width: 600px) {
+  .event-hero {
+    min-height: 62vh;
+    padding-top: 130px;
+  }
+
+  .form-card {
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .form-card-header {
+    flex-direction: column;
+  }
+}

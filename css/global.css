@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --page-width: min(1450px, calc(100% - 40px));
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background: #090807;
+  color: #fff;
+  margin: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.page-container {
+  width: min(1450px, calc(100% - 40px));
+  margin: 0 auto;
+}

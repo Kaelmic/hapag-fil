@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Book an Event | Hapag Filipino Cuisine</title>
+
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/book-event.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  
+</head>
+
+<body>
+
+  <header class="event-topbar">
+
+  <a href="index.html" class="event-logo">
+    <img src="images/hapag logo 2.png" alt="Hapag Logo">
+  </a>
+
+  <a href="index.html" class="back-home-btn">
+    ← Back to Home
+  </a>
+
+</header>
+
+  <main>
+
+    <section class="event-form-section">
+      <div class="event-form-wrapper">
+
+        <div class="form-intro">
+          <p class="eyebrow">Catering Order Form</p>
+          <h2>Tell us about your event</h2>
+          <p>
+            Choose your preferred dishes below. This is a booking request only —
+            final pricing and confirmation will be handled by Hapag.
+          </p>
+        </div>
+
+        <div class="event-booking-layout">
+
+            <form class="event-form" action="#" method="POST">
+
+          <div class="form-card">
+            <div class="form-card-header">
+              <span>01</span>
+              <div>
+                <h3>Customer Details</h3>
+                <p>Your contact and event information.</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="contact">Contact Number *</label>
+                <input type="tel" id="contact" name="contact" placeholder="+356" required />
+              </div>
+
+              <div class="form-group">
+                <label for="venue">Venue *</label>
+                <input type="text" id="venue" name="venue" placeholder="Event location" required />
+              </div>
+
+              <div class="form-group">
+                <label for="guests">Number of Guests *</label>
+                <input type="number" id="guests" name="guests" min="1" placeholder="Example: 40" required />
+              </div>
+
+              <div class="form-group">
+                <label for="delivery-date">Delivery Date *</label>
+                <input type="date" id="delivery-date" name="delivery_date" required />
+              </div>
+
+              <div class="form-group">
+                <label for="delivery-time">Preferred Time</label>
+                <input type="time" id="delivery-time" name="delivery_time" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-card">
+            <div class="form-card-header">
+              <span>02</span>
+              <div>
+                <h3>Menu Selection</h3>
+                <p>Select the dishes you’d like to include.</p>
+              </div>
+            </div>
+
+            <div class="menu-grid">
+
+              <div class="menu-card">
+                <h4>Starter</h4>
+                <label><input type="checkbox" name="starter[]" value="Spring Rolls" /> Spring Rolls</label>
+                <label><input type="checkbox" name="starter[]" value="Fresh Lumpia" /> Fresh Lumpia</label>
+                <label><input type="checkbox" name="starter[]" value="Calamari Fritti" /> Calamari Fritti</label>
+                <label><input type="checkbox" name="starter[]" value="Chicken Skin" /> Chicken Skin</label>
+              </div>
+
+              <div class="menu-card">
+                <h4>Noodles</h4>
+                <label><input type="checkbox" name="noodles[]" value="Pansit Bihon" /> Pansit Bihon</label>
+                <label><input type="checkbox" name="noodles[]" value="Pansit Canton" /> Pansit Canton</label>
+                <label><input type="checkbox" name="noodles[]" value="Spaghetti" /> Spaghetti</label>
+                <label><input type="checkbox" name="noodles[]" value="Palabok" /> Palabok</label>
+              </div>
+
+              <div class="menu-card">
+                <h4>Vegetables</h4>
+                <label><input type="checkbox" name="vegetables[]" value="Chopsuey" /> Chopsuey</label>
+                <label><input type="checkbox" name="vegetables[]" value="Pakbet" /> Pakbet</label>
+                <label><input type="checkbox" name="vegetables[]" value="Laing" /> Laing</label>
+              </div>
+
+              <div class="menu-card">
+                <h4>Beef</h4>
+                <label><input type="checkbox" name="beef[]" value="Beef Caldereta" /> Beef Caldereta</label>
+                <label><input type="checkbox" name="beef[]" value="Bistek" /> Bistek</label>
+                <label><input type="checkbox" name="beef[]" value="Kare Kare" /> Kare Kare</label>
+              </div>
+
+              <div class="menu-card">
+                <h4>Pork</h4>
+                <label><input type="checkbox" name="pork[]" value="C. Kare Kare" /> C. Kare Kare</label>
+                <label><input type="checkbox" name="pork[]" value="Letchon Kawali" /> Letchon Kawali</label>
+                <label><input type="checkbox" name="pork[]" value="Sisig" /> Sisig</label>
+                <label><input type="checkbox" name="pork[]" value="Pork Adobo" /> Pork Adobo</label>
+                <label><input type="checkbox" name="pork[]" value="Binagoongan" /> Binagoongan</label>
+                <label><input type="checkbox" name="pork[]" value="Bicol Express" /> Bicol Express</label>
+                <label><input type="checkbox" name="pork[]" value="Dinuguan" /> Dinuguan</label>
+                <label><input type="checkbox" name="pork[]" value="Pork Caldereta" /> Pork Caldereta</label>
+              </div>
+
+              <div class="menu-card">
+                <h4>Chicken</h4>
+                <label><input type="checkbox" name="chicken[]" value="Adobo" /> Adobo</label>
+                <label><input type="checkbox" name="chicken[]" value="BBQ Wings" /> BBQ Wings</label>
+                <label><input type="checkbox" name="chicken[]" value="Fried Chicken" /> Fried Chicken</label>
+              </div>
+
+              <div class="menu-card dessert-card">
+                <h4>Dessert</h4>
+                <label><input type="checkbox" name="dessert[]" value="Buko Pandan" /> Buko Pandan</label>
+                <label><input type="checkbox" name="dessert[]" value="Maja / Ube Maja" /> Maja / Ube Maja</label>
+                <label><input type="checkbox" name="dessert[]" value="Fruit Salad" /> Fruit Salad</label>
+                <label><input type="checkbox" name="dessert[]" value="Yema Cake / Ube Yema" /> Yema Cake / Ube Yema</label>
+                <label><input type="checkbox" name="dessert[]" value="Leche Flan" /> Leche Flan</label>
+                <label><input type="checkbox" name="dessert[]" value="Minatamis na Sago" /> Minatamis na Sago</label>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="form-card">
+            <div class="form-card-header">
+              <span>03</span>
+              <div>
+                <h3>Notes & Payment</h3>
+                <p>Add any special request and preferred payment method.</p>
+              </div>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="notes">Notes</label>
+              <textarea id="notes" name="notes" placeholder="Any special requests, allergies, delivery notes, or event details..."></textarea>
+            </div>
+
+            <div class="included-box">
+              <strong>Included in package:</strong>
+              <p>Food warmer, ceramic plates, cutleries, and delivery.</p>
+            </div>
+
+            <div class="payment-options">
+              <label>
+                <input type="radio" name="payment" value="Deposit" />
+                Deposit
+              </label>
+
+              <label>
+                <input type="radio" name="payment" value="Cash" />
+                Cash
+              </label>
+            </div>
+          </div>
+
+          <div class="submit-panel">
+            <p>
+              By submitting this form, you are sending a booking request.
+              Hapag will confirm availability, pricing, and final details.
+            </p>
+
+            <button type="submit">Submit Event Request</button>
+          </div>
+
+        </form>
+          <aside class="estimate-panel">
+    <p class="estimate-eyebrow">Live Estimate</p>
+    <h3>Event Valuation</h3>
+
+    <div class="estimate-row">
+      <span>Guests</span>
+      <strong id="guestCount">0 guests</strong>
+    </div>
+
+    <div class="estimate-box">
+      <div class="estimate-line">
+        <span>Base catering estimate</span>
+        <strong id="baseEstimate">€0.00</strong>
+      </div>
+
+      <div class="estimate-line">
+        <span>Service / preparation</span>
+        <strong id="serviceEstimate">€0.00</strong>
+      </div>
+
+      <div class="estimate-total">
+        <span>Projected Quote</span>
+        <strong id="totalEstimate">€0.00</strong>
+      </div>
+    </div>
+
+    <p class="estimate-note">
+      This is only an estimated quote. Final pricing will be confirmed by Hapag.
+    </p>
+  </aside>
+
+</div>
+      </div>
+    </section>
+
+  </main>
+
+<script src="book-event.js"></script>
+</body>
+</html>

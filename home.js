@@ -2,7 +2,7 @@ const hero = document.querySelector(".hero");
 
   window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
-    hero.style.backgroundPosition = `center ${scrollY * 0.35}px`;
+    // hero.style.backgroundPosition = `center ${scrollY * 0.35}px`;
   });
   
 const revealElements = document.querySelectorAll(".reveal");

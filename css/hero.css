@@ -1,8 +1,12 @@
 .hero {
-  min-height: 100vh;
+  min-height: 100svh;
   position: relative;
-  overflow: hidden;
-  padding: 34px 56px 36px;
+  overflow: visible;
+
+  padding: 120px 48px 70px;
+
+  display: flex;
+  align-items: center;
 
   background:
     linear-gradient(
@@ -26,14 +30,11 @@
 
 .hero-content {
   position: relative;
-  z-index: 5;
+  z-index: 10;
 
-  width: 100%;
-  max-width: 1440px;
-
-  margin: 150px auto 0;
-
-  padding-left: 0;
+  width: min(1280px, 100%);
+  margin: 0 auto;
+  padding-top: 0;
 
   display: flex;
   flex-direction: column;
@@ -43,9 +44,7 @@
 .hero-kicker {
   display: inline-flex;
   align-items: center;
-
   gap: 18px;
-
   width: fit-content;
 
   color: #caa64d;
@@ -54,8 +53,7 @@
   font-size: 0.78rem;
   font-weight: 500;
 
-  margin-bottom: 26px;
-
+  margin-bottom: 24px;
   line-height: 1;
 }
 
@@ -63,36 +61,34 @@
   flex: 0 0 54px;
   width: 54px;
   height: 1px;
-
   background: #caa64d;
-
   position: relative;
   top: -1px;
 }
+
 .hero h1 {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(4.5rem, 8vw, 8.8rem);
+  font-size: clamp(3.8rem, 7vw, 7.4rem);
   line-height: 0.9;
   letter-spacing: -4px;
   font-weight: 400;
   color: #fffaf1;
-  margin-bottom: 26px;
+
   max-width: 620px;
+  margin-bottom: 24px;
+
+  text-shadow: 0 16px 45px rgba(0, 0, 0, 0.45);
 }
 
 .hero h1::first-letter {
   letter-spacing: -6px;
 }
 
-.hero h1 {
-  text-shadow: 0 16px 45px rgba(0, 0, 0, 0.45);
-}
-
 .divider {
   width: 96px;
   height: 1px;
   background: #caa64d;
-  margin-bottom: 28px;
+  margin-bottom: 26px;
   position: relative;
 }
 
@@ -108,9 +104,9 @@
 .hero-content p {
   max-width: 470px;
   font-size: 1.05rem;
-  line-height: 1.7;
+  line-height: 1.65;
   color: rgba(255, 255, 255, 0.88);
-  margin-bottom: 36px;
+  margin-bottom: 34px;
 }
 
 .hero-buttons {
@@ -121,7 +117,7 @@
 }
 
 .btn {
-  min-height: 64px;
+  min-height: 62px;
   padding: 0 26px;
   border-radius: 10px;
 
@@ -189,4 +185,16 @@
   display: grid;
   place-items: center;
   font-size: 0.65rem;
+}
+
+/* Scroll progress line */
+.progress-bar,
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  bottom: auto;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 9999;
 }

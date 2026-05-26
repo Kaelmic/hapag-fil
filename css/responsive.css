@@ -739,11 +739,6 @@ li {
   }
 }
 
-/* =========================================================
-   FINAL OVERRIDE
-   This makes sure old CSS cannot squeeze the cards.
-   Keep this at the very bottom.
-========================================================= */
 @media (max-width: 768px) {
   .package-grid,
   .menu-preview-grid,

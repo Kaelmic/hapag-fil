@@ -1,3 +1,11 @@
+/* =========================================================
+   HAPAG FILIPINO CUISINE - RESPONSIVE.CSS
+   Cleaned mobile/tablet responsiveness + fixed mobile navbar/menu
+========================================================= */
+
+/* ================================
+   BASE SAFETY FIXES
+================================ */
 *,
 *::before,
 *::after {
@@ -26,7 +34,6 @@ textarea {
   max-width: 100%;
 }
 
-/* Prevent long words/text from forcing thin columns */
 h1,
 h2,
 h3,
@@ -290,44 +297,264 @@ li {
   }
 }
 
-/* ================================
-   MOBILE NAV / GENERAL MOBILE
-================================ */
 @media (max-width: 900px) {
-   .navbar {
-    top: 10px !important;
-    width: calc(100% - 20px);
-    height: 66px;
-    padding: 0 18px;
-  }
+  .navbar {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
 
-  .burger {
-    display: flex;
-    order: 1;
-  }
+  width: min(1440px, calc(100% - 40px));
+  height: 74px;
 
-  .logo {
-    order: 2;
-    margin-left: auto;
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 24px;
+
+  background: rgba(15, 15, 15, 0.42);
+
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+
+  z-index: 1000;
+
+  transition:
+    background .3s ease,
+    border-color .3s ease,
+    transform .3s ease;
+}
+
+.navbar:hover {
+  background: rgba(18, 18, 18, 0.52);
+
+  border-color: rgba(255,255,255,0.12);
+}
+
+.navbar::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0.02)
+    );
+
+  pointer-events: none;
+}
+
+  .navbar.reveal,
+  .navbar.reveal.show {
+    transform: translateX(-50%) !important;
   }
 
   .nav-left {
-    width: 100%;
-    justify-content: space-between;
+    width: 100% !important;
+    height: 58px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0 !important;
   }
 
   .nav-links,
   .nav-book {
-    display: none;
+    display: none !important;
+  }
+
+  .navbar.menu-open {
+  background: rgba(15,15,15,0.12) !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(8px);
+}
+
+  .burger {
+    width: 40px !important;
+    height: 40px !important;
+
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 5px !important;
+
+    border: none !important;
+    border-radius: 14px !important;
+
+    background: rgba(255,255,255,.04) !important;
+
+    padding: 0 !important;
+    cursor: pointer !important;
+    position: relative;
+    z-index: 1002 !important;
+  }
+
+  .burger > span {
+    width: 22px !important;
+    height: 2px !important;
+    display: block !important;
+
+    border-radius: 999px !important;
+    background: #d6a54b !important;
+
+    transition:
+      transform .3s ease,
+      opacity .3s ease;
+  }
+
+  .burger.active > span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg) !important;
+  }
+
+  .burger.active > span:nth-child(2) {
+    opacity: 0 !important;
+  }
+
+  .burger.active > span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg) !important;
+  }
+
+  .logo {
+    height: 58px !important;
+    margin-left: auto !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+  }
+
+  .logo img {
+    width: auto !important;
+    height: 46px !important;
+    object-fit: contain !important;
+  }
+
+  .mobile-menu {
+    position: fixed !important;
+    top: 78px !important;
+    left: 10px !important;
+    right: 10px !important;
+    bottom: auto !important;
+    inset: auto 10px auto 10px !important;
+
+    width: auto !important;
+    max-width: none !important;
+    height: auto !important;
+    max-height: calc(100svh - 96px) !important;
+    overflow-y: auto !important;
+
+    padding: 14px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+
+    border-radius: 22px !important;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(12,12,12,.98),
+        rgba(5,5,5,.98)
+      ) !important;
+
+    border: 1px solid rgba(255,255,255,.08) !important;
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    box-shadow: 0 24px 70px rgba(0,0,0,.4) !important;
+
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+
+    transform: translateY(-8px) !important;
+
+    transition:
+      opacity .28s ease,
+      transform .28s ease,
+      visibility .28s ease;
+
+    z-index: 999 !important;
+  }
+
+  .mobile-menu.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+
+  .mobile-menu a {
+    width: 100% !important;
+    min-height: 42px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    padding: 10px 12px !important;
+
+    border-radius: 14px !important;
+    border-bottom: 1px solid rgba(255,255,255,.055) !important;
+
+    color: #fff !important;
+    text-decoration: none !important;
+
+    font-size: .95rem !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+  }
+
+  .mobile-menu a:hover {
+    background: rgba(255,255,255,.045) !important;
+    color: #d6a54b !important;
+  }
+
+  .mobile-book-btn {
+    min-height: 44px !important;
+
+    margin-top: 8px !important;
+    padding: 10px 14px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border: none !important;
+    border-radius: 999px !important;
+
+    background: #d6a54b !important;
+    color: #111 !important;
+
+    font-size: .92rem !important;
+    font-weight: 800 !important;
+  }
+
+  .hero {
+    padding-top: 140px !important;
   }
 
   .page-container {
     width: calc(100% - 40px);
-  }
-
-  .mobile-menu {
-    top: 92px;
-    z-index: 999;
   }
 
   .hero-buttons,
@@ -378,78 +605,71 @@ li {
   }
 
   .footer {
-    overflow: hidden;
+    padding: 70px 20px 30px !important;
   }
 
   .footer-grid {
+    width: 100% !important;
     display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 40px;
+    gap: 46px !important;
+    text-align: center !important;
   }
 
   .footer-col {
-    width: 100%;
-    max-width: 100%;
-    text-align: center;
+    width: 100% !important;
+    max-width: 100% !important;
+    align-items: center !important;
   }
 
-  .footer-col h2,
+  .footer-logo,
   .footer-label {
-    display: block;
-    margin-bottom: 18px;
+    min-height: auto !important;
+    justify-content: center !important;
+    margin-bottom: 18px !important;
+  }
+
+  .footer-logo img {
+    width: 145px !important;
+  }
+
+  .footer-label {
+    margin-left: 0 !important;
+    text-align: center !important;
   }
 
   .footer-list,
   .footer-slots {
-    align-items: center;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .footer-col p {
+    max-width: 320px;
+    margin-inline: auto;
+  }
+
+  .footer-badge {
+    width: auto !important;
+    min-width: 180px;
     justify-content: center;
   }
 
-  .footer-list li,
-  .footer-slots p,
-  .footer-col p {
-    white-space: normal;
-    word-break: break-word;
-  }
-
   .footer-bottom {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: column !important;
+    text-align: center !important;
     gap: 10px;
-  }
-
-  .hero {
-    padding-top: 145px !important;
-  }
-
-}
-
-@media (max-width: 820px) {
-  .navbar {
-    top: 14px;
-    width: calc(100% - 20px);
-    height: 66px;
-    padding: 0 18px;
-    border-radius: 20px;
-  }
-
-  .logo {
-    height: 66px;
-  }
-
-  .logo img {
-    height: 82px;
   }
 }
 
 /* ================================
    MAIN PHONE FIX
-   This is the important part for your thin cards.
 ================================ */
 @media (max-width: 768px) {
   .hero {
     min-height: auto;
-    padding: 95px 20px 60px;
     text-align: left;
   }
 
@@ -486,8 +706,9 @@ li {
   .menu-grid,
   .event-booking-layout {
     display: grid !important;
-    grid-template-columns: 1fr !important;
+    grid-template-columns: minmax(0, 1fr) !important;
     gap: 22px;
+    width: 100%;
   }
 
   .package-card,
@@ -533,17 +754,6 @@ li {
     min-height: 280px;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 34px;
-    text-align: center;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 10px;
-  }
-
   .footer-slots {
     align-items: center;
   }
@@ -551,7 +761,7 @@ li {
   .footer-slots p {
     font-size: 1rem;
     line-height: 1.6;
-    white-space: nowrap;
+    white-space: normal;
   }
 }
 
@@ -571,7 +781,7 @@ li {
 
 @media (max-width: 640px) {
   .hero {
-    padding: 120px 22px 64px;
+    padding: 132px 22px 64px !important;
     background:
       linear-gradient(
         180deg,
@@ -687,21 +897,39 @@ li {
     height: 64px;
     font-size: 1.4rem;
   }
-
-  .logo img {
-    height: 72px;
-  }
 }
 
 @media (max-width: 480px) {
   .navbar {
-    width: calc(100% - 20px);
-    height: 64px;
-    padding: 0 16px;
+    width: calc(100% - 16px) !important;
+    height: 56px !important;
+    padding: 0 12px !important;
+  }
+
+  .logo img {
+    height: 44px !important;
+  }
+
+  .mobile-menu {
+    top: 76px !important;
+    left: 8px !important;
+    right: 8px !important;
+    max-height: calc(100svh - 92px) !important;
+    padding: 12px !important;
+  }
+
+  .mobile-menu a {
+    min-height: 39px !important;
+    padding: 9px 11px !important;
+    font-size: .9rem !important;
+  }
+
+  .mobile-book-btn {
+    min-height: 42px !important;
   }
 
   .hero {
-    padding-top: 135px !important;
+    padding-top: 130px !important;
   }
 
   .hero h1 {
@@ -736,25 +964,5 @@ li {
   textarea,
   button {
     font-size: 16px;
-  }
-}
-
-@media (max-width: 768px) {
-  .package-grid,
-  .menu-preview-grid,
-  .preview-grid,
-  .food-grid {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    width: 100% !important;
-  }
-
-  .package-card,
-  .menu-page-card,
-  .preview-card,
-  .food-card {
-    width: 100% !important;
-    max-width: none !important;
-    flex: none !important;
   }
 }

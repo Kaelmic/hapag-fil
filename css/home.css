@@ -1,6 +1,25 @@
 .navbar {
+  position: fixed;
+  top: 34px;
   left: 50%;
   transform: translateX(-50%);
+
+  width: min(1440px, calc(100% - 112px));
+  height: 78px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 28px;
+  z-index: 1000;
+
+  background: rgba(15, 15, 15, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 22px;
 }
 
 .navbar.reveal {
@@ -11,6 +30,12 @@
 .navbar.reveal.show {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
 /* HOME BUTTONS */
@@ -319,8 +344,8 @@
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
-  gap: 70px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
 }
 
 .footer-col h2 {
@@ -396,6 +421,18 @@
   font-size: .82rem;
 }
 
+.footer-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-slots p {
+  margin: 0;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
 /* ANIMATIONS */
 
 .reveal {
@@ -415,3 +452,89 @@
 .delay-2 { transition-delay: .24s; }
 .delay-3 { transition-delay: .36s; }
 .delay-4 { transition-delay: .48s; }
+
+.burger {
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: transparent;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.burger > span {
+  width: 26px;
+  height: 2px;
+  background: #d6a54b;
+  border-radius: 999px;
+  transition: 0.3s ease;
+}
+
+.btn-icon,
+.play {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(22, 22, 22, 0.35);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobile-menu {
+  position: fixed;
+  top: 95px;
+  left: 20px;
+  right: 20px;
+
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+
+  transition: 0.3s ease;
+
+  z-index: 999;
+}
+
+.mobile-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mobile-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.mobile-book-btn {
+  margin-top: 12px;
+  padding: 14px 18px;
+  border-radius: 999px;
+  background: #d6a54b;
+  color: #111 !important;
+  text-align: center;
+  font-weight: 600;
+}

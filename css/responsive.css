@@ -1,3 +1,47 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  max-width: 100%;
+}
+
+/* Prevent long words/text from forcing thin columns */
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+span,
+label,
+li {
+  overflow-wrap: break-word;
+}
+
+/* ================================
+   LARGE SCREENS
+================================ */
 @media (max-width: 1440px) {
   .hero {
     padding-left: 42px;
@@ -57,6 +101,9 @@
   }
 }
 
+/* ================================
+   SMALL LAPTOP
+================================ */
 @media (max-width: 1200px) {
   .process-bar {
     display: none;
@@ -110,26 +157,32 @@
   }
 
   .menu-preview-grid,
-  .preview-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .preview-grid,
+  .package-grid,
+  .food-grid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: 24px;
   }
 
   .menu-page-card img {
-    height: 460px;
+    height: 360px;
+    object-fit: cover;
   }
 
   .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
     gap: 50px;
   }
 }
 
+/* ================================
+   TABLET
+================================ */
 @media (max-width: 1024px) {
   .hero {
     min-height: auto;
     padding: 130px 32px 80px;
     align-items: flex-start;
-
     background:
       linear-gradient(
         90deg,
@@ -143,7 +196,6 @@
         rgba(5, 5, 4, 0.85) 100%
       ),
       url("../images/hero.png");
-
     background-size: cover;
     background-position: center;
   }
@@ -154,15 +206,59 @@
   }
 
   .hero h1 {
-    font-size: clamp(3.4rem, 10vw, 5.4rem);
+    font-size: clamp(3rem, 9vw, 5rem);
     max-width: 620px;
   }
 
   .process-bar {
     display: none;
   }
+
+  .menu-preview-grid,
+  .preview-grid,
+  .package-grid,
+  .food-grid,
+  .about-story,
+  .about-highlights,
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
 }
 
+/* ================================
+   ABOUT PAGE TABLET
+================================ */
+@media (max-width: 980px) {
+  .about-hero,
+  .about-story-section,
+  .about-values {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .about-hero-container,
+  .values-container,
+  .about-story-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero {
+    background: #161616;
+  }
+
+  .about-hero-image,
+  .values-image {
+    min-height: 440px;
+  }
+
+  .story-card.featured {
+    transform: none;
+  }
+}
+
+/* ================================
+   EVENT FORM TABLET
+================================ */
 @media (max-width: 950px) {
   .event-hero,
   .event-form-section {
@@ -194,9 +290,30 @@
   }
 }
 
+/* ================================
+   MOBILE NAV / GENERAL MOBILE
+================================ */
 @media (max-width: 900px) {
-  .navbar {
-    align-items: center;
+   .navbar {
+    top: 10px !important;
+    width: calc(100% - 20px);
+    height: 66px;
+    padding: 0 18px;
+  }
+
+  .burger {
+    display: flex;
+    order: 1;
+  }
+
+  .logo {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .nav-left {
+    width: 100%;
+    justify-content: space-between;
   }
 
   .nav-links,
@@ -204,13 +321,19 @@
     display: none;
   }
 
+  .page-container {
+    width: calc(100% - 40px);
+  }
+
+  .mobile-menu {
+    top: 92px;
+    z-index: 999;
+  }
+
   .hero-buttons,
   .hero-actions {
     flex-direction: column;
-  }
-
-  .page-container {
-    width: calc(100% - 40px);
+    width: 100%;
   }
 
   .btn,
@@ -227,7 +350,8 @@
   .about-preview,
   .home-cta,
   .menu-builder,
-  .about-section {
+  .about-section,
+  .event-form-section {
     padding: 80px 20px;
   }
 
@@ -236,7 +360,8 @@
   .menu-preview-grid,
   .food-grid,
   .about-story,
-  .about-highlights {
+  .about-highlights,
+  .footer-grid {
     grid-template-columns: 1fr;
   }
 
@@ -253,10 +378,50 @@
   }
 
   .footer {
-    flex-direction: column;
-    padding: 30px 20px;
+    overflow: hidden;
+  }
+
+  .footer-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+  }
+
+  .footer-col {
+    width: 100%;
+    max-width: 100%;
     text-align: center;
   }
+
+  .footer-col h2,
+  .footer-label {
+    display: block;
+    margin-bottom: 18px;
+  }
+
+  .footer-list,
+  .footer-slots {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-list li,
+  .footer-slots p,
+  .footer-col p {
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .hero {
+    padding-top: 145px !important;
+  }
+
 }
 
 @media (max-width: 820px) {
@@ -277,26 +442,32 @@
   }
 }
 
-@media (max-width: 760px) {
+/* ================================
+   MAIN PHONE FIX
+   This is the important part for your thin cards.
+================================ */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 95px 20px 60px;
+    text-align: left;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.7rem, 15vw, 4rem);
+    line-height: 0.95;
+    letter-spacing: -2px;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
   .category-title {
     align-items: flex-start;
     flex-direction: column;
-  }
-
-  .food-card {
-    min-height: auto;
-  }
-
-  .preview-section,
-  .menu-preview,
-  .about-preview,
-  .home-cta {
-    padding: 80px 20px;
-  }
-
-  .preview-grid,
-  .menu-preview-grid {
-    grid-template-columns: 1fr;
   }
 
   .section-heading {
@@ -307,45 +478,100 @@
     margin-top: 38px;
   }
 
-  .menu-page-card img {
-    height: 380px;
+  .package-grid,
+  .menu-preview-grid,
+  .preview-grid,
+  .food-grid,
+  .form-grid,
+  .menu-grid,
+  .event-booking-layout {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 22px;
   }
 
-  .footer {
-    padding: 70px 0 28px;
+  .package-card,
+  .food-card,
+  .form-card,
+  .about-content,
+  .menu-page-card,
+  .preview-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .package-card,
+  .food-card {
+    min-height: auto;
+  }
+
+  .package-card h3 {
+    font-size: clamp(1.8rem, 9vw, 2.4rem);
+    line-height: 1.1;
+    word-break: normal;
+  }
+
+  .package-card p,
+  .package-card a {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .menu-page-card img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 360px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .about-image {
+    min-height: 280px;
   }
 
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 42px;
+    gap: 34px;
+    text-align: center;
   }
 
   .footer-bottom {
     flex-direction: column;
     gap: 10px;
   }
+
+  .footer-slots {
+    align-items: center;
+  }
+
+  .footer-slots p {
+    font-size: 1rem;
+    line-height: 1.6;
+    white-space: nowrap;
+  }
 }
 
+/* ================================
+   SMALL PHONE
+================================ */
 @media (max-width: 650px) {
   .menu-preview {
-    padding: 80px 22px;
+    padding: 72px 20px;
   }
 
   .menu-preview-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 22px;
-  }
-
-  .menu-page-card img {
-    height: 480px;
   }
 }
 
 @media (max-width: 640px) {
   .hero {
-    min-height: auto;
     padding: 120px 22px 64px;
-
     background:
       linear-gradient(
         180deg,
@@ -354,7 +580,6 @@
         rgba(5, 5, 4, 0.94) 100%
       ),
       url("../images/hero.png");
-
     background-size: cover;
     background-position: center;
   }
@@ -380,12 +605,6 @@
 
   .hero h1::first-letter {
     letter-spacing: -3px;
-  }
-
-  .hero-content p {
-    font-size: 0.98rem;
-    line-height: 1.6;
-    max-width: 100%;
   }
 
   .hero-buttons {
@@ -414,8 +633,45 @@
   .form-card-header {
     flex-direction: column;
   }
+
+  .about-hero {
+    padding-top: 130px;
+  }
+
+  .about-hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .about-hero-image,
+  .values-image {
+    min-height: 340px;
+    border-radius: 28px;
+  }
+
+  .values-content,
+  .story-card {
+    padding: 28px;
+    border-radius: 28px;
+  }
+
+  .floating-card {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+  }
+
+  .about-actions {
+    flex-direction: column;
+  }
+
+  .about-btn {
+    text-align: center;
+  }
 }
 
+/* ================================
+   EXTRA SMALL PHONE
+================================ */
 @media (max-width: 520px) {
   .hero h1 {
     letter-spacing: -2px;
@@ -434,5 +690,76 @@
 
   .logo img {
     height: 72px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    width: calc(100% - 20px);
+    height: 64px;
+    padding: 0 16px;
+  }
+
+  .hero {
+    padding-top: 135px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 16vw, 3.4rem);
+  }
+
+  .hero-kicker {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+  }
+
+  .section-heading h2,
+  .about-header h2 {
+    font-size: clamp(2rem, 11vw, 3rem);
+  }
+
+  .package-card,
+  .food-card,
+  .form-card,
+  .about-content,
+  .menu-page-card,
+  .preview-card {
+    padding: 22px;
+  }
+
+  .menu-page-card img {
+    max-height: 300px;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    font-size: 16px;
+  }
+}
+
+/* =========================================================
+   FINAL OVERRIDE
+   This makes sure old CSS cannot squeeze the cards.
+   Keep this at the very bottom.
+========================================================= */
+@media (max-width: 768px) {
+  .package-grid,
+  .menu-preview-grid,
+  .preview-grid,
+  .food-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+  }
+
+  .package-card,
+  .menu-page-card,
+  .preview-card,
+  .food-card {
+    width: 100% !important;
+    max-width: none !important;
+    flex: none !important;
   }
 }

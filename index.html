@@ -20,25 +20,54 @@
 <header class="hero">
 
   <nav class="navbar reveal">
+
+  <!-- LEFT SIDE -->
+  <div class="nav-left">
+
+    <!-- BURGER -->
+    <button class="burger" id="burgerBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- LOGO -->
     <a href="index.html" class="logo">
-       <img src="images/hapag logo 2.png" alt="Hapag Filipino Cuisine Logo">
-      <!-- <div>
-        <strong>HAPAG</strong>
-        <small>FILIPINO CUISINE</small>
-      </div> -->
+      <img src="images/hapag logo 2.png" alt="Hapag Filipino Cuisine Logo">
     </a>
 
-    <ul class="nav-links">
-      <li><a href="#" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="#packages">Packages</a></li>
-      <li><a href="#">Menu</a></li>
-      <li><a href="#">Gallery</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+  </div>
+  
+  <!-- DESKTOP NAV -->
+  <ul class="nav-links">
+    <li><a href="#" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#">Menu</a></li>
+    <li><a href="#">Gallery</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
 
-    <a href="book-an-event.html" class="nav-book">Book an Event</a>
-  </nav>
+  <!-- CTA -->
+  <a href="book-an-event.html" class="nav-book">
+    Book an Event
+  </a>
+
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#">Home</a>
+  <a href="about.html">About</a>
+  <a href="#packages">Packages</a>
+  <a href="#">Menu</a>
+  <a href="#">Gallery</a>
+  <a href="#">Contact</a>
+
+  <a href="book-an-event.html" class="mobile-book-btn">
+    Book an Event
+  </a>
+</div>
 
   <div class="hero-content">
     <div class="hero-kicker reveal delay-1">
@@ -213,7 +242,7 @@
     <div class="page-container">
     <h2>Planning a celebration?</h2>
     <p>Tell us your date, guest count, and preferred dishes.</p>
-    <a href="#booking" class="btn-primary">Book an Event</a>
+    <a href="book-an-event.html" class="btn-primary">Book an Event</a>
     </div>
   </section>
 </main>
@@ -236,21 +265,18 @@
       </a>
     </div>
 
-    <!-- HOURS -->
     <div class="footer-col">
       <span class="footer-label">Our Seating Slots</span>
 
-      <ul class="footer-list">
-        <li>11:30 AM — 1:00 PM</li>
-        <li>1:00 PM — 2:30 PM</li>
-        <li>2:30 PM — 4:00 PM</li>
-        <li>4:00 PM — 5:30 PM</li>
-        <li>5:30 PM — 7:00 PM</li>
-        <li>7:00 PM — 8:30 PM</li>
-      </ul>
+      <div class="footer-slots">
+        <p>11:30 AM - 1:00 PM</p>
+        <p>1:00 PM - 2:30 PM</p>
+        <p>2:30 PM - 4:00 PM</p>
+        <p>4:00 PM - 5:30 PM</p>
+        <p>5:30 PM - 7:00 PM</p>
+      </div>
     </div>
 
-    <!-- CONTACT -->
     <div class="footer-col">
       <span class="footer-label">Restaurant Coordinates</span>
 
@@ -261,7 +287,6 @@
       </ul>
     </div>
 
-    <!-- CTA -->
     <div class="footer-col">
       <span class="footer-label">Reserve a Celebration</span>
 
